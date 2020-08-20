@@ -1,34 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+/*font-family: 'Press Start 2P', cursive;*/
+
+body {
+    max-height: 100vh;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 .container {
+    max-width: 400px;
+    max-height: 400px;
+    margin: 10vh auto;
     display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+h1 {
+    flex-basis: 10vh;
+    text-align: center;
+    line-height: 10vh;
+    font-size: 40px;
+    font-family: 'Press Start 2P', cursive;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+h2 {
+    margin-left: 10px;
+    margin-top: 50px;
+    text-align: center;
+    font-size: 16px;
+    font-family: 'Press Start 2P', cursive;
+}
+
+#startBtn {
+    margin-top: 20px;
+    border: 2px solid black;
+    height: 40px;
+    font-size: 14px;
+    font-family: 'Press Start 2P', cursive;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    background-color: black;
+    color: white;
+    transition: 0.3s;
+}
+
+#startBtn:hover {
+    background-color: white;
+    color: black;
 }
 
 .grid {
     display: flex;
+    border: 2px solid black;
     flex-wrap: wrap;
     width: 200px;
     height: 400px;
-    background-color: grey;
+    background-color: #cccccc;
 }
 
 .grid div {
+    height: 20px;
     width: 20px;
-    flex-basis: 20px;
-}
-
-.tetromino {
-    background-color: blue;
 }
 
 .mini-grid {
-    display: flex;
-    flex-wrap: wrap;
     margin-left: 50px;
+    border: 2px solid black;
     width: 80px;
     height: 80px;
-    background-color: grey;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #cccccc;
 }
 
 .mini-grid div {
-    flex-basis: 20px;
+    height: 20px;
     width: 20px;
 }
