@@ -77,9 +77,6 @@ document.addEventListener('DOMContentLoaded', () => {
         })
     }
 
-    //make the tetromino mov down every second
-    //timerId = setInterval(moveDown, 1000);
-
     //assign functions to keyCodes
     function control(e) {
         if (e.keyCode === 37) {
@@ -141,7 +138,29 @@ document.addEventListener('DOMContentLoaded', () => {
         draw()
     }
 
-    //WRITE A FUNCTION TO PERF ROTATE
+    function isAtRight() {
+        return current.some(index => (currentPosition + index + 1) % width === 0)
+    }
+
+    function isAtLeft() {
+        return current.some(index => (currentPosition + index) % width === 0)
+    }
+
+    function chechRotatePosition(position){
+        position = position || currentPosition;
+
+        if((position+1) % width < 4){
+            if (isAtRight()){
+                currentPosition += 1;
+                chechRotatePosition(position);
+            }
+        } else if( position % width > 5){
+            if (isAtLeft()){
+                currentPosition -=1;
+                chechRotatePosition(position);
+            }
+        }
+    }
 
     //rotate the tetromino
     function rotate() {
@@ -151,6 +170,7 @@ document.addEventListener('DOMContentLoaded', () => {
             currentRotation = 0;
         }
         current = theTetrominoes[random][currentRotation];
+        chechRotatePosition();
         draw();
     }
 
