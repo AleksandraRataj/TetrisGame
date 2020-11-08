@@ -5,7 +5,7 @@ A simple Tetris game written to learn the syntax of the JavaScript programming l
 ![Tetris](src/styles/tetris.png)
 
 ## Technologies
-- BasicS of JavaScript
+- Basics of JavaScript
 - HTML5
 - CSS3 
 
